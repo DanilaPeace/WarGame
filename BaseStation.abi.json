@@ -1,0 +1,96 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addWarUnit",
+			"inputs": [
+				{"name":"warUnitAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removeWarUnit",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "gameOver",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getShieldForce",
+			"inputs": [
+				{"name":"shieldForceValue","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "takeAttack",
+			"inputs": [
+				{"name":"attackValue","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendAllMoney",
+			"inputs": [
+				{"name":"enemyAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "m_shielForce",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_shielForce","type":"uint8"}
+			]
+		},
+		{
+			"name": "m_health",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_health","type":"uint8"}
+			]
+		},
+		{
+			"name": "m_warUnitsArray",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_warUnitsArray","type":"address[]"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"m_shielForce","type":"uint8"},
+		{"name":"m_health","type":"uint8"},
+		{"name":"m_warUnitsArray","type":"address[]"}
+	]
+}

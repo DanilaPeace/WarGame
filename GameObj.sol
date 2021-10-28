@@ -32,7 +32,7 @@ contract GameObj is IGameObj{
     }
 
     // Обработка гибили
-    function gameOver() public {
+    function gameOver() virtual public {
         tvm.accept();
         sendAllMoney(msg.sender);
     }
