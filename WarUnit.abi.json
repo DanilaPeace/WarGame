@@ -1,0 +1,114 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"baseStationAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "doAttack",
+			"inputs": [
+				{"name":"enemyAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getAttackForce",
+			"inputs": [
+				{"name":"attackValue","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "gameOver",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deathFromBaseStation",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getShieldForce",
+			"inputs": [
+				{"name":"shieldForceValue","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "takeAttack",
+			"inputs": [
+				{"name":"attackValue","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "sendAllMoney",
+			"inputs": [
+				{"name":"enemyAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "m_shielForce",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_shielForce","type":"uint8"}
+			]
+		},
+		{
+			"name": "m_health",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_health","type":"uint8"}
+			]
+		},
+		{
+			"name": "m_baseStationAddress",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_baseStationAddress","type":"address"}
+			]
+		},
+		{
+			"name": "m_attack",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_attack","type":"uint8"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"m_shielForce","type":"uint8"},
+		{"name":"m_health","type":"uint8"},
+		{"name":"m_baseStationAddress","type":"address"},
+		{"name":"m_attack","type":"uint8"}
+	]
+}
