@@ -6,7 +6,7 @@ import "GameObj.sol";
 import "BaseStation.sol";
 
 contract WarUnit is GameObj{
-    address public m_baseStationAddress;
+    BaseStation public m_baseStation;
     uint8 public m_attack;
 
     constructor(BaseStation baseStationAddress, uint16 warUnitHealth) public GameObj(warUnitHealth){
@@ -15,27 +15,25 @@ contract WarUnit is GameObj{
         tvm.accept();
 
         baseStationAddress.addWarUnit(this);
-        m_baseStationAddress = baseStationAddress;
+        m_baseStation = baseStationAddress;
     }
 
-    // Атаковать
+    // Unit makes attack 
     function doAttack(IGameObj enemyAddress) public{
         tvm.accept();
         enemyAddress.takeAttack(m_attack);
     }
 
-    // Получить силу атаки
+    // This method gets attach force
     function getAttackForce(uint8 attackValue) public {
         tvm.accept();
         m_attack = attackValue;
     }
-    
-    // Получить силу защиты - берем из нашего родителя
 
-    // Обработка гибили, это же метод есть в родительском объекте GameObject
     function gameOver() public override{
         tvm.accept();
         sendAllMoney(msg.sender);
+        m_baseStation.removeWarUnit(this);
     }
 
     // Смерть из-за базы

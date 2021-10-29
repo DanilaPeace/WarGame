@@ -20,10 +20,23 @@ contract BaseStation is GameObj{
         m_warUnitsArray.push(warUnitAddress);
     }
 
-    // Убрать воееный юниь
-    function removeWarUnit() public {
-        // !!! Доработать этот метод !!!
+    // Funciton to get an index of an unit who died
+    function getIndexRemovingUnit(address warUnitAddress) internal returns(uint32){
+        for(uint i = 0; i < m_warUnitsArray.length; i++) {
+            if(m_warUnitsArray[i] == warUnitAddress) {
+                return uint32(i);
+            }
+        }
+    }
+
+    // Remove war unit who died
+    function removeWarUnit(address warUnitAddress) external {
         tvm.accept();
+
+        uint32 removingUnitIndex = getIndexRemovingUnit(warUnitAddress);
+        for(uint index = removingUnitIndex; index < m_warUnitsArray.length - 1; index++) {
+            m_warUnitsArray[index] = m_warUnitsArray[index + 1];
+        }
         m_warUnitsArray.pop();
     }
 

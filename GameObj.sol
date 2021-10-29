@@ -28,7 +28,7 @@ contract GameObj is IGameObj{
         if(!isDead()) {
             uint8 damage = attackValue - m_shielForce;
             // The unit's shield takes part of the damage
-            if(damage > 0) {
+            if(damage >= 0) {
                 m_health -= damage;
                 if(isDead()) {
                     gameOver();
