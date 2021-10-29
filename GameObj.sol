@@ -4,7 +4,7 @@ pragma AbiHeader expire;
 import "IGameObj.sol";
 
 contract GameObj is IGameObj{
-    // Защитная сила
+    // Shied Force
     uint8 public m_shielForce;
     int32 public m_health;
 
@@ -16,30 +16,46 @@ contract GameObj is IGameObj{
         m_health = int32(health);
     }
 
-    // Получить силу защиты
+    // Get Shield force
     function getShieldForce(uint8 shieldForceValue) public {
         tvm.accept();
         m_shielForce = shieldForceValue;
     }   
 
-    // Принять атаку
+    // Take attack. This funciton implements one from interface
     function takeAttack(uint8 attackValue) public override{
         tvm.accept();
-        m_health -= attackValue;
+        if(!isDead()) {
+            uint8 damage = attackValue - m_shielForce;
+            // The unit's shield takes part of the damage
+            if(damage > 0) {
+                m_health -= damage;
+                if(isDead()) {
+                    gameOver();
+                }
+            } 
+            else {
+                // If unit shield more than attack force damage anyway is  
+                m_health--;
+            }
+        }
+        else {
+            gameOver();
+        }
     }
 
-    // Проверка убит ли объект
+    // Chech  whether obj is dead
     function isDead() private view returns(bool){
         return m_health <= 0;
     }
 
-    // Обработка гибили
+    // Method for gameover for obj 
     function gameOver() virtual public {
         tvm.accept();
         sendAllMoney(msg.sender);
     }
 
-    // Метод для самоуничтожения
+    // Send all money and destroy contract
     function sendAllMoney(address enemyAddress) public view{
         tvm.accept();
         enemyAddress.transfer(0, true, 160);
