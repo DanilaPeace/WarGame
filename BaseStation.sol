@@ -7,7 +7,7 @@ import "GameObj.sol";
 contract BaseStation is GameObj{
     address[] public m_warUnitsArray;
 
-    constructor(uint8 baseHealth) public GameObj(baseHealth){
+    constructor(uint16 baseHealth) public GameObj(baseHealth){
         require(tvm.pubkey() != 0, 101);
         require(msg.pubkey() == tvm.pubkey(), 102);
         tvm.accept();

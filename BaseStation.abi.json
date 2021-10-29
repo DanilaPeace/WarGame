@@ -6,7 +6,7 @@
 		{
 			"name": "constructor",
 			"inputs": [
-				{"name":"baseHealth","type":"uint8"}
+				{"name":"baseHealth","type":"uint16"}
 			],
 			"outputs": [
 			]
@@ -70,7 +70,7 @@
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"m_health","type":"uint8"}
+				{"name":"m_health","type":"int32"}
 			]
 		},
 		{
@@ -91,7 +91,7 @@
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"m_shielForce","type":"uint8"},
-		{"name":"m_health","type":"uint8"},
+		{"name":"m_health","type":"int32"},
 		{"name":"m_warUnitsArray","type":"address[]"}
 	]
 }
