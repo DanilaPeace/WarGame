@@ -9,7 +9,7 @@ contract WarUnit is GameObj{
     address public m_baseStationAddress;
     uint8 public m_attack;
 
-    constructor(BaseStation baseStationAddress) public {
+    constructor(BaseStation baseStationAddress, uint8 warUnitHealth) public GameObj(warUnitHealth){
         require(msg.pubkey() == tvm.pubkey(), 102);
         require(tvm.pubkey() != 0, 101);
         tvm.accept();

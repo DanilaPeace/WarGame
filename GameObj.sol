@@ -6,12 +6,14 @@ import "IGameObj.sol";
 contract GameObj is IGameObj{
     // Защитная сила
     uint8 public m_shielForce;
-    uint8 public m_health = 50;
+    uint8 public m_health;
 
-    constructor() public {
+    constructor(uint8 health) public {
         require(tvm.pubkey() != 0, 101);
         require(msg.pubkey() == tvm.pubkey(), 102);
         tvm.accept();
+
+        m_health = health;
     }
 
     // Получить силу защиты

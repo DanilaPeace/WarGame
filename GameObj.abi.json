@@ -6,6 +6,7 @@
 		{
 			"name": "constructor",
 			"inputs": [
+				{"name":"health","type":"uint8"}
 			],
 			"outputs": [
 			]

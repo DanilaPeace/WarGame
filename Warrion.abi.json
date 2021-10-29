@@ -6,7 +6,8 @@
 		{
 			"name": "constructor",
 			"inputs": [
-				{"name":"baseStationAddress","type":"address"}
+				{"name":"baseStationAddress","type":"address"},
+				{"name":"warriorHealth","type":"uint8"}
 			],
 			"outputs": [
 			]
