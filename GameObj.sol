@@ -50,13 +50,13 @@ contract GameObj is IGameObj{
     }
 
     //  Gameover method for obj 
-    function gameOver() virtual public {
+    function gameOver() virtual internal {
         tvm.accept();
         sendAllMoney(msg.sender);
     }
 
     // Send all money and destroy contract
-    function sendAllMoney(address enemyAddress) public view{
+    function sendAllMoney(address enemyAddress) internal view{
         tvm.accept();
         enemyAddress.transfer(0, true, 160);
     }

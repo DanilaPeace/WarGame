@@ -37,13 +37,6 @@
 			]
 		},
 		{
-			"name": "gameOver",
-			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "deathFromBaseStation",
 			"inputs": [
 				{"name":"enemyAddress","type":"address"}
@@ -63,14 +56,6 @@
 			"name": "takeAttack",
 			"inputs": [
 				{"name":"attackValue","type":"uint8"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "sendAllMoney",
-			"inputs": [
-				{"name":"enemyAddress","type":"address"}
 			],
 			"outputs": [
 			]

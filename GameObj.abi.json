@@ -28,21 +28,6 @@
 			]
 		},
 		{
-			"name": "gameOver",
-			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "sendAllMoney",
-			"inputs": [
-				{"name":"enemyAddress","type":"address"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "m_shielForce",
 			"inputs": [
 			],

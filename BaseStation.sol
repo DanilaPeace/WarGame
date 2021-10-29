@@ -43,7 +43,7 @@ contract BaseStation is GameObj{
         m_warUnitsArray.pop();
     }
 
-    function gameOver() public override{
+    function gameOver() internal override{
         tvm.accept();
         sendAllMoney(msg.sender);
 

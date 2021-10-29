@@ -31,7 +31,7 @@ contract WarUnit is GameObj, IWarUnit{
         m_attack = attackValue;
     }
 
-    function gameOver() public override{
+    function gameOver() internal override{
         tvm.accept();
         sendAllMoney(msg.sender);
         m_baseStation.removeWarUnit(this);
