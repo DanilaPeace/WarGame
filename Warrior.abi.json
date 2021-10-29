@@ -38,6 +38,7 @@
 		{
 			"name": "deathFromBaseStation",
 			"inputs": [
+				{"name":"enemyAddress","type":"address"}
 			],
 			"outputs": [
 			]
@@ -83,11 +84,11 @@
 			]
 		},
 		{
-			"name": "m_baseStationAddress",
+			"name": "m_baseStation",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"m_baseStationAddress","type":"address"}
+				{"name":"m_baseStation","type":"address"}
 			]
 		},
 		{
@@ -109,7 +110,7 @@
 		{"name":"_constructorFlag","type":"bool"},
 		{"name":"m_shielForce","type":"uint8"},
 		{"name":"m_health","type":"int32"},
-		{"name":"m_baseStationAddress","type":"address"},
+		{"name":"m_baseStation","type":"address"},
 		{"name":"m_attack","type":"uint8"}
 	]
 }

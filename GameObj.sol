@@ -26,8 +26,8 @@ contract GameObj is IGameObj{
     function takeAttack(uint8 attackValue) public override{
         tvm.accept();
         if(!isDead()) {
+            // The unit's shield takes part of the attack and unit take damage
             uint8 damage = attackValue - m_shielForce;
-            // The unit's shield takes part of the damage
             if(damage >= 0) {
                 m_health -= damage;
                 if(isDead()) {
@@ -49,7 +49,7 @@ contract GameObj is IGameObj{
         return m_health <= 0;
     }
 
-    // Method for gameover for obj 
+    //  Gameover method for obj 
     function gameOver() virtual public {
         tvm.accept();
         sendAllMoney(msg.sender);

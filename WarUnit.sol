@@ -2,10 +2,11 @@ pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
 import "IGameObj.sol";
+import "IWarUnit.sol";
 import "GameObj.sol";
 import "BaseStation.sol";
 
-contract WarUnit is GameObj{
+contract WarUnit is GameObj, IWarUnit{
     BaseStation public m_baseStation;
     uint8 public m_attack;
 
@@ -36,10 +37,15 @@ contract WarUnit is GameObj{
         m_baseStation.removeWarUnit(this);
     }
 
-    // Смерть из-за базы
-    function deathFromBaseStation() public {
-        // !!! Доработать этот метод !!!
+    // Modifier for deathFromBaseStation() method
+    modifier checkMyBaseStation {
+        require(msg.sender == m_baseStation, 105);
+        _;
+    }
+
+    // This method is called when base station is died
+    function deathFromBaseStation(address enemyAddress) public override(IWarUnit) checkMyBaseStation{
         tvm.accept();
-        sendAllMoney(msg.sender);
+        sendAllMoney(enemyAddress);
     }
 }
