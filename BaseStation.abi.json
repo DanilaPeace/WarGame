@@ -1,6 +1,6 @@
 {
 	"ABI version": 2,
-	"version": "2.1",
+	"version": "2.2",
 	"header": ["time", "expire"],
 	"functions": [
 		{
@@ -28,7 +28,7 @@
 			]
 		},
 		{
-			"name": "getShieldForce",
+			"name": "setShieldForce",
 			"inputs": [
 				{"name":"shieldForceValue","type":"uint8"}
 			],

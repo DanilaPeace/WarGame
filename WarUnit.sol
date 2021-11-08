@@ -26,7 +26,7 @@ contract WarUnit is GameObj, IWarUnit{
     }
 
     // This method gets attach force
-    function getAttackForce(uint8 attackValue) public {
+    function setAttackForce(uint8 attackValue) public {
         tvm.accept();
         m_attack = attackValue;
     }
@@ -44,7 +44,7 @@ contract WarUnit is GameObj, IWarUnit{
     }
 
     // This method is called when base station is died
-    function deathFromBaseStation(address enemyAddress) public override(IWarUnit) checkMyBaseStation{
+    function deathFromBaseStation(address enemyAddress) public override checkMyBaseStation{
         tvm.accept();
         sendAllMoney(enemyAddress);
     }

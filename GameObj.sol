@@ -16,8 +16,8 @@ contract GameObj is IGameObj{
         m_health = int32(health);
     }
 
-    // Get Shield force
-    function getShieldForce(uint8 shieldForceValue) public {
+    // Set shield force for object 
+    function setShieldForce(uint8 shieldForceValue) public {
         tvm.accept();
         m_shielForce = shieldForceValue;
     }   
